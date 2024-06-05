@@ -4,10 +4,10 @@ import argparse
 def parse_args():
     parser = argparse.ArgumentParser(description='Funny JSON Explorer')
     parser.add_argument('-f', '--file', required=True, help='JSON file')
-    parser.add_argument('-s', '--style', required=True, help='Rendering style')
-    parser.add_argument('-i', '--icons', required=True, help='Icon family')
-    # parser.add_argument('-s', '--style', choices=['tree', 'rectangle'], required=True, help='Rendering style')
-    # parser.add_argument('-i', '--icons', choices=['default', 'poker-face','circle','flower','star'], required=True, help='Icon family')
+    # parser.add_argument('-s', '--style', required=True, help='Rendering style')
+    # parser.add_argument('-i', '--icons', required=True, help='Icon family')
+    parser.add_argument('-s', '--style', choices=['tree', 'rectangle'], required=True, help='Rendering style')
+    parser.add_argument('-i', '--icons', choices=['default', 'poker-face','circle','flower','star','crown','animal','rectangle','weather'], required=True, help='Icon family')
     return parser.parse_args()
 
 def load_json(file_path):
@@ -118,13 +118,15 @@ class IconFamily:
         elif self.icon_type == 'flower':
             return {'node': '❀ ', 'leaf': '✿ '}
         elif self.icon_type == 'recrangle':
-            return {'node': '❀ ', 'leaf': '✿ '}
-        elif self.icon_type == 'triangle':
-            return {'node': '❀ ', 'leaf': '✿ '}
+            return {'node': '□ ', 'leaf': ' ■ '}
+        elif self.icon_type == 'crown':
+            return {'node': '♚ ', 'leaf': '♛ '}
         elif self.icon_type == 'star':
             return {'node': '☆ ', 'leaf': '★ '}
         elif self.icon_type == 'weather':
             return {'node': '☀️  ', 'leaf': '☁️  '}
+        elif self.icon_type == 'animal':
+            return {'node': '🐶  ', 'leaf': '🐱  '}
         else:
             return {'node': '', 'leaf': ''}
 
