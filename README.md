@@ -1,11 +1,13 @@
 # 21307306hxy
-
 software engineering HW5
 
 运行文件：
 
 ```
-python fje.py -f json文件名 -s 风格名 -i icon名
+usage: fje.py [-h] 
+	-f FILE 
+	-s {tree,rectangle} 
+	-i {default,poker-face,circle,flower,star,crown,animal,rectangle,weather}
 ```
 
 e.g
